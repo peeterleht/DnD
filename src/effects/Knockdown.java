@@ -1,14 +1,9 @@
-public class WeaponAttack implements Effect {
+package effects;
 
-    private int damage;
-
-    public WeaponAttack(int damage) {
-        this.damage = damage;
-    }
-
+public class Knockdown implements Effect {
     @Override
     public void onHit(Dude effectTarget) {
-        effectTarget.takeDamage(damage);
+        effectTarget.reduceActionPoints(effectTarget.getActionPoints());
     }
 
     @Override
@@ -23,13 +18,11 @@ public class WeaponAttack implements Effect {
 
     @Override
     public int requiredActionPoints() {
-        return 3;
+        return 5;
     }
 
     @Override
     public boolean isExpired() {
         return true;
     }
-
-
 }

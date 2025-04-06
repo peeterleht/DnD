@@ -1,7 +1,17 @@
-public class Knockdown implements Effect{
+package effects;
+import characters.Dude;
+
+public class WeaponAttack implements Effect {
+
+    private int damage;
+
+    public WeaponAttack(int damage) {
+        this.damage = damage;
+    }
+
     @Override
     public void onHit(Dude effectTarget) {
-        effectTarget.reduceActionPoints(effectTarget.getActionPoints());
+        effectTarget.takeDamage(damage);
     }
 
     @Override
@@ -16,11 +26,13 @@ public class Knockdown implements Effect{
 
     @Override
     public int requiredActionPoints() {
-        return 5;
+        return 3;
     }
 
     @Override
     public boolean isExpired() {
         return true;
     }
+
+
 }

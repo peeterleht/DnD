@@ -1,3 +1,6 @@
+package effects;
+import characters.Dude;
+
 public class Spiderweb implements Effect {
 
     private int turnsRemaining = 2;

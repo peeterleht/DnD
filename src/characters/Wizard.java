@@ -1,3 +1,8 @@
+package characters;
+
+import effects.Fireball;
+import effects.Spiderweb;
+
 import java.util.Random;
 
 public class Wizard extends Dude {
@@ -20,7 +25,7 @@ public class Wizard extends Dude {
         applyEffects();
 
         actionPoints = Math.min(actionPoints + 4, 25);
-        System.out.println("Wizard action points: " + actionPoints);
+        System.out.println("characters.Wizard action points: " + actionPoints);
 
         Random r = new Random();
         Effect attackEffect;
@@ -31,7 +36,7 @@ public class Wizard extends Dude {
             attackEffect = new Spiderweb();
         }
 
-        System.out.println("Wizard uses " + attackEffect.getClass().getSimpleName());
+        System.out.println("characters.Wizard uses " + attackEffect.getClass().getSimpleName());
         attackEffect.onTurnStart(attackTarget);
         attackEffect.onTurnEnd(attackTarget);
 

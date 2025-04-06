@@ -1,3 +1,5 @@
+package effects;
+
 public class Fireball implements Effect {
 
     private int damage;

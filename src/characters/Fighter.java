@@ -1,3 +1,8 @@
+package characters;
+
+import effects.Knockdown;
+import effects.WeaponAttack;
+
 import java.util.Random;
 
 public class Fighter extends Dude {
@@ -20,7 +25,7 @@ public class Fighter extends Dude {
         applyEffects();
 
         actionPoints = Math.min(actionPoints + 2, 15);
-        System.out.println("Fighter action points: " + actionPoints);
+        System.out.println("characters.Fighter action points: " + actionPoints);
 
         if (actionPoints < 5) {  // Not enough action points case
             System.out.println("Not enough action points");
@@ -36,7 +41,7 @@ public class Fighter extends Dude {
             attackEffect = new Knockdown();
         }
 
-        System.out.println("Fighter uses " + attackEffect.getClass().getSimpleName());
+        System.out.println("characters.Fighter uses " + attackEffect.getClass().getSimpleName());
         attackEffect.onHit(attackTarget);
 
         actionPoints -= attackEffect.requiredActionPoints();
