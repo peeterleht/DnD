@@ -42,3 +42,5 @@ J
 src/characters/Wizard.java,9/3/931a4843a99ac99e6932ab76915c6b10eb4da770
 K
 src/characters/Fighter.java,a/d/ad085e773fb146ad13b50ac8099e9d315f6c5175
+G
+src/effects/Effect.java,8/5/857c0663350757eb33c8d6863eeecd74981c08a1

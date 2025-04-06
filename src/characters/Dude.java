@@ -1,7 +1,10 @@
 package characters;
 
+import effects.Effect;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public abstract class Dude {
     protected int accuracy;
@@ -9,6 +12,7 @@ public abstract class Dude {
     protected int health;
     protected int actionPoints;
     private List<Effect> activeEffects = new ArrayList<>();
+    protected List<Effect> skills = new ArrayList<>();
 
     public Dude(
             int accuracy,
@@ -28,6 +32,11 @@ public abstract class Dude {
 
     public abstract void takeTurn(Dude attackTarget);
 
+    public Effect getRandomEffect() {
+        Random r = new Random();
+        return skills.get(r.nextInt(skills.size()));
+    }
+
     public int getAccuracy() {
         return accuracy;
     }
@@ -45,9 +54,8 @@ public abstract class Dude {
     }
 
     public void takeDamage(int damage) {
-        int effectiveDamage = Math.max(0, damage - armor);
-        health -= effectiveDamage;
-        System.out.println(getClass().getSimpleName() + " takes " + effectiveDamage + " damage" );
+        health -= damage;
+        System.out.println(getClass().getSimpleName() + " takes " + damage + " damage" );
     }
 
     public void reduceActionPoints(int amount) {

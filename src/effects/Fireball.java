@@ -1,5 +1,7 @@
 package effects;
 
+import characters.Dude;
+
 public class Fireball implements Effect {
 
     private int damage;

@@ -1,3 +1,5 @@
+package effects;
+
 import characters.Dude;
 
 public interface Effect {

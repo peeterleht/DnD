@@ -1,5 +1,7 @@
 package effects;
 
+import characters.Dude;
+
 public class Knockdown implements Effect {
     @Override
     public void onHit(Dude effectTarget) {
@@ -18,7 +20,7 @@ public class Knockdown implements Effect {
 
     @Override
     public int requiredActionPoints() {
-        return 5;
+        return 8;
     }
 
     @Override

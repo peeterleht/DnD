@@ -1,8 +1,10 @@
 package characters;
 
+import effects.Effect;
 import effects.Fireball;
 import effects.Spiderweb;
 
+import java.util.List;
 import java.util.Random;
 
 public class Wizard extends Dude {
@@ -14,6 +16,7 @@ public class Wizard extends Dude {
                 40,
                 25
         );
+        skills = List.of(new Fireball(30),new Spiderweb());
     }
 
     @Override
@@ -27,22 +30,16 @@ public class Wizard extends Dude {
         actionPoints = Math.min(actionPoints + 4, 25);
         System.out.println("characters.Wizard action points: " + actionPoints);
 
-        Random r = new Random();
-        Effect attackEffect;
+       Effect randomEffect = getRandomEffect();
+       
 
-        if(r.nextBoolean()) {
-            attackEffect = new Fireball(20);
-        } else {
-            attackEffect = new Spiderweb();
-        }
+        System.out.println("characters.Wizard uses " + randomEffect.getClass().getSimpleName());
+        randomEffect.onTurnStart(attackTarget);
+        randomEffect.onTurnEnd(attackTarget);
 
-        System.out.println("characters.Wizard uses " + attackEffect.getClass().getSimpleName());
-        attackEffect.onTurnStart(attackTarget);
-        attackEffect.onTurnEnd(attackTarget);
+        actionPoints -= randomEffect.requiredActionPoints();
 
-        actionPoints -= attackEffect.requiredActionPoints();
-
-        attackTarget.addEffect(attackEffect);
+        attackTarget.addEffect(randomEffect);
     }
 
 }
