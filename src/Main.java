@@ -1,3 +1,6 @@
+import characters.Fighter;
+import characters.Wizard;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -11,13 +14,13 @@ public class Main {
 
             wizard.takeTurn(fighter);
             if(!fighter.isAlive()) {
-                System.out.println("Fighter is dead");
+                System.out.println("characters.Fighter is dead");
                 break;
             }
 
             fighter.takeTurn(wizard);
             if(!wizard.isAlive()) {
-                System.out.println("Wizard is dead");
+                System.out.println("characters.Wizard is dead");
                 break;
             }
 

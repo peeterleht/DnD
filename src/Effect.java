@@ -1,3 +1,5 @@
+import characters.Dude;
+
 public interface Effect {
     void onHit(Dude effectTarget);
 

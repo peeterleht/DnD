@@ -1,3 +1,5 @@
+package characters;
+
 import java.util.ArrayList;
 import java.util.List;
 
