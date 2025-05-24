@@ -14,16 +14,15 @@ public class Main {
 
             wizard.takeTurn(fighter);
             if(!fighter.isAlive()) {
-                System.out.println("characters.Fighter is dead");
+                System.out.println("Fighter is dead");
                 break;
             }
 
             fighter.takeTurn(wizard);
             if(!wizard.isAlive()) {
-                System.out.println("characters.Wizard is dead");
+                System.out.println("Wizard is dead");
                 break;
             }
-
 
             round++;
         }

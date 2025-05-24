@@ -16,7 +16,7 @@ public class Fighter extends Dude {
                 50,
                 15
         );
-        skills = List.of(new Knockdown(), new WeaponAttack(20));
+        skills = List.of(new Knockdown(), new WeaponAttack(15));
     }
 
     @Override

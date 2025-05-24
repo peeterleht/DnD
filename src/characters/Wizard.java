@@ -28,12 +28,12 @@ public class Wizard extends Dude {
         applyEffects();
 
         actionPoints = Math.min(actionPoints + 4, 25);
-        System.out.println("characters.Wizard action points: " + actionPoints);
+        System.out.println("Wizard action points: " + actionPoints);
 
        Effect randomEffect = getRandomEffect();
        
 
-        System.out.println("characters.Wizard uses " + randomEffect.getClass().getSimpleName());
+        System.out.println("Wizard uses " + randomEffect.getClass().getSimpleName());
         randomEffect.onTurnStart(attackTarget);
         randomEffect.onTurnEnd(attackTarget);
 
